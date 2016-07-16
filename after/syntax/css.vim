@@ -117,11 +117,11 @@ syn keyword scssNull null contained
 syn keyword scssBoolean true false contained
 syn keyword scssBooleanOp and or not contained
 
-syn match scssMixin "^@mixin" nextgroup=scssMixinName skipwhite
+syn match scssMixin "^@define-mixin" nextgroup=scssMixinName skipwhite
 syn match scssMixinName "[[:alnum:]_-]\+" contained nextgroup=scssDefinition,scssMixinParams
 syn region scssMixinParams contained contains=css.*Attr,cssColor,cssValue.*,cssString.*,cssUrl,cssBoxProp,cssDimensionProp,@comment,scssBoolean,scssNull,scssVariable,scssFunction start="(" end=")" extend
-syn match scssInclude "@include" nextgroup=scssMixinName skipwhite containedin=cssMediaBlock
-syn match scssContent "@content" contained containedin=scssDefinition
+syn match scssInclude "@mixin" nextgroup=scssMixinName skipwhite containedin=cssMediaBlock
+syn match scssContent "@mixin-content" contained containedin=scssDefinition
 
 syn match scssFunctionDefinition "^@function" nextgroup=scssFunctionNameWithWhitespace skipwhite
 syn match scssFunctionNameWithWhitespace "[[:alnum:]_-]\+\s*" contained contains=scssFunctionName nextgroup=scssFunctionParams
