@@ -1,6 +1,6 @@
 " usage:
-" set indentexpr=scss_indent#GetIndent(v:lnum)
-fun! scss_indent#GetIndent(lnum)
+" set indentexpr=css_indent#GetIndent(v:lnum)
+fun! css_indent#GetIndent(lnum)
   " { -> increase indent
   " } -> decrease indent
   if a:lnum == 1

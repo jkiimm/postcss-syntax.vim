@@ -6,16 +6,6 @@
 " Inspired by the syntax files for sass and css. Thanks to the authors of
 " those files!
 
-if !exists("main_syntax")
-  if exists("b:current_syntax")
-    finish
-  endif
-  let main_syntax = 'scss'
-endif
-
-runtime! syntax/css.vim
-runtime! syntax/css/*.vim
-
 syn case ignore
 
 " XXX fix for #20, can be removed once the patch is in vim's css.vim
@@ -214,8 +204,3 @@ hi def link scssImport    Include
 hi def link scssTodo      Todo
 hi def link scssAtRoot    Keyword
 hi def link scssMapParens Delimiter
-
-let b:current_syntax = "scss"
-if main_syntax == 'scss'
-  unlet main_syntax
-endif
