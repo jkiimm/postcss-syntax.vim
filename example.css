@@ -1,0 +1,11 @@
+@atrule foo {
+  width: 1px;
+
+  @nested bar {
+    width: 2px;
+  }
+}
+
+@at-rule baz {
+  width: 3px;
+}

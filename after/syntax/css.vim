@@ -117,6 +117,7 @@ syn keyword scssNull null contained
 syn keyword scssBoolean true false contained
 syn keyword scssBooleanOp and or not contained
 
+syn match scssInclude "@[a-zA-Z0-9_-]\+" nextgroup=scssMixinName skipwhite containedin=cssMediaBlock
 syn match scssMixin "^@define-mixin" nextgroup=scssMixinName skipwhite
 syn match scssMixinName "[[:alnum:]_-]\+" contained nextgroup=scssDefinition,scssMixinParams
 syn region scssMixinParams contained contains=css.*Attr,cssColor,cssValue.*,cssString.*,cssUrl,cssBoxProp,cssDimensionProp,@comment,scssBoolean,scssNull,scssVariable,scssFunction start="(" end=")" extend
